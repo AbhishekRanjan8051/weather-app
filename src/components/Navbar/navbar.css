@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  width: 97%;
+  background: black;
+  padding: 25px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 25px;
+  color: white ;
+  height: fit-content;
+}
+.right-navbar {
+  display: flex;
+  gap: 10px;
+}
+.left-navbar:hover{
+cursor: pointer;
+}
