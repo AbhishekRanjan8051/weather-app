@@ -4,6 +4,9 @@ import "./home.css";
 // import umbrella from "../assests/img/umbrella.png";
 import { Navbar } from "./Navbar/Navbar";
 export const Home = () => {
+  
+ 
+
   return (
     <>
       <div className="home">
