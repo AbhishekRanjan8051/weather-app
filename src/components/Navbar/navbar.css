@@ -6,13 +6,18 @@
   margin: auto;
   margin-top: 10px;
   border-radius: 25px;
-  color: white ;
+  color: white;
   height: fit-content;
 }
 .right-navbar {
   display: flex;
   gap: 10px;
 }
-.left-navbar:hover{
-cursor: pointer;
+.right-navbar button {
+  background: transparent;
+  color: white;
+  border:none
+}
+.left-navbar:hover {
+  cursor: pointer;
 }

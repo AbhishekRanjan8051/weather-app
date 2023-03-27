@@ -11,18 +11,14 @@ export const Navbar = () => {
         </div>
         <div className="right-navbar">
           <button>
-            <h3>Home</h3>
+            <h3>Weather</h3>
           </button>
           <button>
-            <h3>Home</h3>
+            <h3>Cities</h3>
           </button>
           <button>
-            <h3>Home</h3>
+            <h3>Setting</h3>
           </button>
-          <button>
-            <h3>Home</h3>
-          </button>
-
         </div>
       </div>
     </>
