@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card } from "react-bootstrap";
+
 import "./weather.css";
+
+import city from "../../assests/img/city.png";
 export const Weather = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -15,22 +18,42 @@ export const Weather = () => {
           `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=56a1b72457882c27f73c03f6543d0cf2`
         )
         .then((res) => {
-          console.log({ res });
+          // console.log({ res });
           setData(res.data);
         });
     });
   }, []);
+
+  const timeConvert = (currentTimestamp) => {
+    currentTimestamp = Date.now();
+    let date;
+
+    date = new Intl.DateTimeFormat("en-IN", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(currentTimestamp);
+
+    // date = new Intl.DateTimeFormat("en-US", {
+    //   hour: "2-digit",
+    //   minute: "2-digit",
+    //   second: "2-digit",
+    // }).format(currentTimestamp);
+    return date;
+  };
 
   return (
     <>
       <div className="weather">
         {/* {console.log({data})} */}
         <div className="weather-city">
-          <div>
+          <div style={{ display: "flex" }}>
+            <img src={city} height="45" alt="" />
             <h1>{data.name}</h1>
           </div>
           <div>
-            <h2>{data.name}</h2>
+            {console.log(data.sys.sunrise)}
+            <h2>{timeConvert(data.sys.sunrise)}</h2>
           </div>
         </div>
       </div>
