@@ -7,6 +7,7 @@ import "./weather.css";
 import city from "../../assests/img/city.png";
 export const Weather = () => {
   const [data, setData] = useState([]);
+  const [sys, setSys] = useState([]);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
       // setlong(position.coords.longitude);
@@ -20,25 +21,28 @@ export const Weather = () => {
         .then((res) => {
           // console.log({ res });
           setData(res.data);
+          setSys(res.data.sys);
         });
     });
   }, []);
 
-  const timeConvert = (currentTimestamp) => {
+  const timeConvert = (currentTimestamp, check) => {
     currentTimestamp = Date.now();
     let date;
+    if (check == "date") {
+      date = new Intl.DateTimeFormat("en-IN", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).format(currentTimestamp);
+    } else {
+      date = new Intl.DateTimeFormat("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      }).format(currentTimestamp);
+    }
 
-    date = new Intl.DateTimeFormat("en-IN", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    }).format(currentTimestamp);
-
-    // date = new Intl.DateTimeFormat("en-US", {
-    //   hour: "2-digit",
-    //   minute: "2-digit",
-    //   second: "2-digit",
-    // }).format(currentTimestamp);
     return date;
   };
 
@@ -52,8 +56,8 @@ export const Weather = () => {
             <h1>{data.name}</h1>
           </div>
           <div>
-            {console.log(data.sys.sunrise)}
-            <h2>{timeConvert(data.sys.sunrise)}</h2>
+            <h2>Date ➡️ {timeConvert(sys.sunrise, "date")}</h2>
+            <h2>Time ➡️ {timeConvert(sys.sunrise)}</h2>
           </div>
         </div>
       </div>

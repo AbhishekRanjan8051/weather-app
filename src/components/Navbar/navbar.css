@@ -21,3 +21,7 @@
 .left-navbar:hover {
   cursor: pointer;
 }
+.right-navbar a{
+  text-decoration: none;
+  color: white;
+}

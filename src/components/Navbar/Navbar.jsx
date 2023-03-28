@@ -7,19 +7,21 @@ export const Navbar = () => {
     <>
       <div className="navbar">
         <div className="left-navbar">
-          <img className="img" width={80} src={umbrella} alt="" />
+          <Link to="/">
+            <img className="img" width={80} src={umbrella} alt="" />
+          </Link>
         </div>
         <div className="right-navbar">
           <Link to="/weather">
             <h3>Weather</h3>
           </Link>
 
-          <button>
-            <h3>Home</h3>
-          </button>
-          <button>
-            <h3>Home</h3>
-          </button>
+          <Link to="/city">
+            <h3>City</h3>
+          </Link>
+          <Link to="setting">
+            <h3>Setting</h3>
+          </Link>
         </div>
       </div>
     </>
