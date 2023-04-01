@@ -8,3 +8,17 @@
   justify-content: center;
   margin-top: 15px;
 }
+.temp-card {
+  padding: 20px;
+  color: black;
+  width: 40%;
+  margin: auto;
+}
+.temp-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.temp-change > button {
+  float: right;
+}
