@@ -8,6 +8,7 @@ function App() {
     <div className="">
       <Home />
       <Routes>
+        <Route path="/" element={<Weather />} />
         <Route path="/weather" element={<Weather />} />
       </Routes>
     </div>

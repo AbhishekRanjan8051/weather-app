@@ -16,12 +16,12 @@ export const Navbar = () => {
             <h3>Weather</h3>
           </Link>
 
-          <Link to="/city">
+          {/* <Link to="/city">
             <h3>City</h3>
           </Link>
           <Link to="setting">
             <h3>Setting</h3>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </>

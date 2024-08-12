@@ -1,24 +1,145 @@
-.weather {
-  color: white;
-  margin: auto;
+.weather-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #6d6ded, #4721b0);
+  border-radius: 15px;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 .weather-city {
-  display: flex;
-  gap: 30%;
-  justify-content: center;
-  margin-top: 15px;
-}
-.temp-card {
-  padding: 20px;
-  color: black;
-  width: 40%;
-  margin: auto;
-}
-.temp-div {
-  display: flex;
-  flex-direction: column;
   text-align: center;
+  margin-bottom: 1.5rem;
 }
-.temp-change > button {
-  float: right;
+
+.city-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.city-name {
+  font-size: 2.5rem;
+  margin: 0;
+  animation: fadeIn 2s ease;
+}
+
+.date-time-info {
+  margin-top: 1rem;
+}
+
+.temp-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 1rem;
+  color: #fff;
+  animation: slideUp 1.5s ease;
+}
+
+.temp-div span {
+  display: block;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.temp-unit-form {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 1rem;
+}
+
+.temp-unit-form .form-check {
+  position: relative;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.temp-unit-form .form-check input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.temp-unit-form .form-check label {
+  position: relative;
+  padding-left: 35px;
+  margin-right: 15px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.temp-unit-form .form-check label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.temp-unit-form .form-check input[type="radio"]:checked + label:before {
+  background-color: #f7b733;
+  border-color: #f7b733;
+}
+
+.temp-unit-form .form-check label:after {
+  content: "";
+  position: absolute;
+  left: 6.5px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.temp-unit-form .form-check input[type="radio"]:checked + label:after {
+  transform: translateY(-50%) scale(1);
+}
+
+.temp-unit-form .form-check:hover label:before {
+  border-color: #f7b733;
+}
+
+.temp-unit-form .form-check:hover label {
+  color: #f7b733;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
